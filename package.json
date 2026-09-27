@@ -1,0 +1,52 @@
+{
+  "name": "pulse",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "studio": "sanity dev --host 0.0.0.0",
+    "studio:build": "sanity build",
+    "studio:deploy": "sanity deploy",
+    "sanity:seed": "sanity exec scripts/seed.ts --with-user-token",
+    "sanity:seed:replace": "sanity exec scripts/seed.ts --with-user-token -- --replace",
+    "sanity:migrate:dry": "sanity exec scripts/migrate.ts --with-user-token -- --dry-run",
+    "sanity:migrate": "sanity exec scripts/migrate.ts --with-user-token",
+    "sanity:schema": "sanity schema extract --path schema.json",
+    "sanity:dataset:export": "sanity dataset export production backups/production.tar.gz",
+    "sanity:dataset:import": "sanity dataset import backups/production.tar.gz production --replace",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@portabletext/react": "^7.0.1",
+    "@sanity/client": "^7.27.0",
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/vision": "^4.22.1",
+    "@tailwindcss/postcss": "^4.3.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "hls.js": "^1.7.3",
+    "lucide-react": "^1.48.0",
+    "next": "15.5.26",
+    "next-sanity": "^11.6.9",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-icons": "^5.7.0",
+    "sanity": "^4.22.1",
+    "sonner": "^2.0.8",
+    "styled-components": "^6.1.19",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3",
+    "prettier": "^3.6.2"
+  }
+}
